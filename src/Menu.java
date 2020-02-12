@@ -39,6 +39,7 @@ public class Menu {
                     headerDisplay("CURRENT PLAYERS");
                     break;
                 case 2: //Adds a new player to linked list
+                    //region Add new player
                     headerDisplay("CREATE A NEW PLAYER");
                     System.out.println("In order to create a new player we will need some information about them.");
                     System.out.println("Please type the new player's first name.");
@@ -62,8 +63,9 @@ public class Menu {
                     // TEMP needs to be stored somewhere.
                     System.out.println("New player: " + firstName + " " + lastName + " has been created.");
                     run = backQuit();
+                    //endregion
                     break;
-                case 3: //Searchers for a player in the linked list
+                case 3: //Searches for a player in the linked list
                     headerDisplay("SEARCH FOR A PLAYER");
                     break;
                 case 4: //Delete a player from the linked list
