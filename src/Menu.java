@@ -32,6 +32,21 @@ public class Menu {
                     System.out.println("4) Delete a current player");
                     System.out.println("5) Close the program");
                     selection = intCheck(1,5);
+                    switch (selection)
+                    {
+                        case 1:
+                            break;
+                        case 2:
+                            break;
+                        case 3:
+                            break;
+                        case 4:
+                            break;
+                        case 5:
+                            run = false;
+                    }
+
+
 
                 }
             }
@@ -52,18 +67,20 @@ public class Menu {
     {
         int selection;
         Scanner console = new Scanner(System.in);
+        String rangeMessage = ("Please type a number from " + min + " to " + max + ".");
+        System.out.println(rangeMessage);
         while (!console.hasNextInt())
         {
-            System.out.println("Please type a number from " + min + " to " + max + ".");
+            System.out.println(rangeMessage);
             String wrongSintax = console.next();
         }
         selection = console.nextInt();
         while (selection<min || selection>max)
         {
-            System.out.println("Please type a number from " + min + " to " + max + ".");
+            System.out.println(rangeMessage);
             while (!console.hasNextInt())
             {
-                System.out.println("Please type a number from " + min + " to " + max + ".");
+                System.out.println(rangeMessage);
                 String wrongSintax = console.next();
             }
             selection = console.nextInt();
