@@ -17,6 +17,12 @@ public class Menu {
         Scanner input = new Scanner(System.in); //scanner for user input
         boolean run=true; //boolean to be able to exit runtime without need of class specific console commands
         int selection; //to register input
+
+        String firstName;
+        String lastName;
+        String team;
+        int age;
+
         while (run)
         {
             headerDisplay("FOOTBALL CLUB");
@@ -34,6 +40,28 @@ public class Menu {
                     break;
                 case 2: //Adds a new player to linked list
                     headerDisplay("CREATE A NEW PLAYER");
+                    System.out.println("In order to create a new player we will need some information about them.");
+                    System.out.println("Please type the new player's first name.");
+                    firstName = input.next();
+                    System.out.println("Next, please type the new player's last name.");
+                    lastName = input.next();
+                    System.out.println("Next, please type the new player's age.");
+                    age = intCheck();
+                    System.out.println("For what team will this new player be playing for?");
+                    System.out.println("1) F.C. København");
+                    System.out.println("2) Randers FC.");
+                    selection =intCheck(1,2);
+                        if (selection==1)
+                        {
+                            team = "F.C. København";
+                        } else
+                        {
+                            team = "Randers FC";
+                        }
+                    Player createdInput = new Player(firstName, lastName,team, age);
+                    // TEMP needs to be stored somewhere.
+                    System.out.println("New player: " + firstName + " " + lastName + " has been created.");
+                    run = backQuit();
                     break;
                 case 3: //Searchers for a player in the linked list
                     headerDisplay("SEARCH FOR A PLAYER");
@@ -53,10 +81,37 @@ public class Menu {
 
 
 
+    private boolean backQuit() //gives a choice of main menu or quiting program
+    {
+        int selection;
+        System.out.println();
+        System.out.println("What would you like to do now?");
+        System.out.println("1) Return to main menu");
+        System.out.println("2) Quit.");
+        selection = intCheck(1,2);
+        if (selection==1) //it returns true or false so u can set run to the returned value.
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 
 
-
-
+    private int intCheck() //verify that the user input an int
+    {
+        int selection;
+        Scanner console = new Scanner(System.in);
+        while (!console.hasNextInt())
+        {
+            System.out.println("Please type a number.");
+            String wrongSintax = console.next();
+        }
+        selection = console.nextInt();
+        return selection;
+    }
 
     private int intCheck(int min,int max) //verify that the user input an int and that the int is in the desired range
     {
