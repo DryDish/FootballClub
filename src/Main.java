@@ -5,5 +5,6 @@ public class Main {
         Menu mainMenu = new Menu();
 
         mainMenu.display();
+        //this comment is to see if it works?
     }
 }
