@@ -1,3 +1,7 @@
+import org.jetbrains.annotations.NotNull;
+
+import java.util.Scanner;
+
 public class Menu {
 
     private int decorationSpace;
@@ -10,7 +14,9 @@ public class Menu {
 
     public void display()
     {
+        Scanner input = new Scanner(System.in);
         boolean run=true;
+        int selection;
         while (run)
         {
             screenNumber = 1;
@@ -18,14 +24,56 @@ public class Menu {
             {
                 case 1:
                 {
-                    header("FOOTBALL CLUB");
+                    headerDisplay("FOOTBALL CLUB");
+                    System.out.println("what would you like to do?");
+                    System.out.println("1) See all current players");
+                    System.out.println("2) Add a new player");
+                    System.out.println("3) Search for a player");
+                    System.out.println("4) Delete a current player");
+                    System.out.println("5) Close the program");
+                    selection = intCheck(1,5);
+
                 }
             }
         }
 
 
     }
-    public void header(String header)
+
+
+
+
+
+
+
+
+
+    private int intCheck(int min,int max)
+    {
+        int selection;
+        Scanner console = new Scanner(System.in);
+        while (!console.hasNextInt())
+        {
+            System.out.println("Please type a number from " + min + " to " + max + ".");
+            String wrongSintax = console.next();
+        }
+        selection = console.nextInt();
+        while (selection<min || selection>max)
+        {
+            System.out.println("Please type a number from " + min + " to " + max + ".");
+            while (!console.hasNextInt())
+            {
+                System.out.println("Please type a number from " + min + " to " + max + ".");
+                String wrongSintax = console.next();
+            }
+            selection = console.nextInt();
+        }
+        return selection;
+    }
+
+
+    //region Menu decoration
+    private void headerDisplay(@NotNull String header)
     {
         decorationSpace = (lineSpacer-header.length())/2;
         for (int i=0;i<lineSpacer;i++)
@@ -44,13 +92,14 @@ public class Menu {
         System.out.println();
     }
 
-    public void blankSpace( int amount )
+    private void blankSpace( int amount )
     {
         for (int i =0; i< amount; i++)
         {
             System.out.print(" ");
         }
     }
+    //endregion
 
 
 }
