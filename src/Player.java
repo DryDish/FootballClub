@@ -52,4 +52,9 @@ public class Player {
     {
         this.age = age;
     }
+
+    @Override
+    public String toString() {
+        return "Name : " + this.firstName + " " + this.lastName + ", Team :" + this.team + ", Age : " + this.age;
+    }
 }
