@@ -1,6 +1,6 @@
 public class Node {
 
-    private Player data;
+    private Player data = new Player();
     private Node next;
 
     public Node () {
@@ -31,5 +31,10 @@ public class Node {
 
     public void setNext(Node next) {
         this.next = next;
+    }
+
+    @Override
+    public String toString() {
+        return data.toString();
     }
 }

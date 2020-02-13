@@ -5,6 +5,8 @@ public class Player {
     public String team;
     public int age;
 
+    public  Player () {}
+
     public Player(String firstName,String lastName, String team, int age)
     {
         this.firstName = firstName;
@@ -55,6 +57,6 @@ public class Player {
 
     @Override
     public String toString() {
-        return "Name : " + this.firstName + " " + this.lastName + ", Team :" + this.team + ", Age : " + this.age;
+        return "Name : " + this.firstName + " " + this.lastName + ", Team : " + this.team + ", Age : " + this.age;
     }
 }
