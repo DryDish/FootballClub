@@ -14,12 +14,13 @@ public class Main {
 
         list.add(new Player ("s", "dasdasdad", "da", 5), 3);
 
-        list.printList();
+
 
         //testing end
 
         //Populate the LinkedLists from a text file here?
-        //mainMenu.display();
+        mainMenu.display(list);
+        list.printList();
         //Save the LinkedList contents to file here?
     }
 }
