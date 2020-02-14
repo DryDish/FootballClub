@@ -4,7 +4,7 @@ public class Node {
     private Node next;
 
     public Node () {
-        this(null, null);
+        this (null, null);
     }
 
     public Node ( Player data ) {

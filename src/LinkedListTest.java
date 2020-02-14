@@ -8,6 +8,10 @@ public class LinkedListTest {
 
     }
 
+    LinkedListTest ( Node head ) {
+        this.head = head;
+    }
+
     public void add ( Player data )
     {
         if ( head.getData() == null )
@@ -36,22 +40,33 @@ public class LinkedListTest {
     {
         if ( this.size() > index )
         {
+
             Node temp = new Node(data);
             Node current = head;
-            int i = 0;
-            while ( i < index-1 )
-            {
-                current = current.getNext();
-                i++;
+            if (index == 0) {
+                temp.setNext(head);
+                head = temp;
             }
-            temp.setNext(current.getNext());
-            current.setNext(temp);
+            else {
+                int i = 0;
+                while ( i < index-1 )
+                {
+                    current = current.getNext();
+                    i++;
+                }
+                temp.setNext(current.getNext());
+                current.setNext(temp);
+            }
         }
     }
 
     public void remove ( int index ) {
         if ( this.size() > index ) {
             Node current = head;
+            if (index == 0 ) {
+                head = current.getNext();
+            }
+            else {
             int i = 0;
             while ( i < index-1 )
             {
@@ -59,10 +74,11 @@ public class LinkedListTest {
                 i++;
             }
             current.setNext(current.getNext().getNext());
+            }
         }
     }
 
-    public Player get ( int index )
+    public Node get ( int index )
     {
         if ( this.size() > index ) {
             Node current = head;
@@ -72,9 +88,64 @@ public class LinkedListTest {
                 current = current.getNext();
                 i++;
             }
-            return current.getData();
+            return current;
         }
         return null;
+    }
+
+    public void swap ( int index1, int index2 ) {
+
+        if(head == null) {
+            return;
+        }
+        if(index1 >= index2) {
+            return;
+        }
+        /*Node temp1 = this.get(index1);
+        Node prev1 = this.get(index1-1);
+        Node temp2 = this.get(index2);
+        Node prev2 = this.get(index2-1);
+
+        if (prev1 != null) {
+            prev1.setNext(temp2);
+        }
+        else {
+            head = temp2;
+        }
+        if (prev2 != null) {
+            prev2.setNext(temp1);
+        }
+        else {
+            head = temp1;
+        }
+
+        Node current = temp1.getNext();
+        temp1.setNext(temp2.getNext());
+        temp2.setNext(current);*/
+        Node temp1 = this.get(index1);
+        Node temp2 = this.get(index2);
+        this.add (temp2.getData(), index1);
+        this.remove (index1+1);
+        this.add (temp1.getData(), index2);
+        this.remove (index2+1);
+
+    }
+
+    public void sortByAge () {
+        boolean sorted = false;
+        while ( !sorted ) {
+            sorted = true;
+            Node current = head;
+            int index = 0;
+            while (current.getNext() != null) {
+                if (current.getData().getAge() > current.getNext().getData().getAge()){
+                    sorted = false;
+                    swap (index, index+1);
+                }
+                current = current.getNext();
+                index++;
+            }
+        }
     }
 
     public int size ()
