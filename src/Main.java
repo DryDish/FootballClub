@@ -1,3 +1,4 @@
+import java.io.File;
 import java.io.FileNotFoundException;
 
 public class Main {
@@ -8,13 +9,16 @@ public class Main {
 
         //testing
         LinkedListTest list = new LinkedListTest();
-        list.add(new Player ("s", "ds", "da", 3));
-        list.add(new Player ("4", "ds", "da", 2));
-        list.add(new Player ("5", "ds", "da", 1));
-        list.add(new Player ("6", "ds", "da", 7));
-        list.add(new Player ("7", "ds", "da", 10));
 
-        //list.add(new Player ("s", "dasdasdad", "da", 5), 3);
+        //list.add(new Player ("s", "ds", "da", 3));
+        /*
+        list.add(new Player ("4", "ds", "da", 3));
+        list.add(new Player ("5", "ds", "da", 3));
+        list.add(new Player ("6", "ds", "da", 3));
+        list.add(new Player ("7", "ds", "da", 3));
+
+        list.add(new Player ("s", "dasdasdad", "da", 5), 3);
+        */
 
 
         System.out.println("**********************");
@@ -26,6 +30,7 @@ public class Main {
         //testing end
 
         //Populate the LinkedLists from a text file here?
+        FileManagement.readFromFile(list);
         mainMenu.display(list);
         FileManagement.saveToFile(list);
         list.printList();

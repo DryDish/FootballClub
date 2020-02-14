@@ -28,7 +28,7 @@ public class Menu {
             headerDisplay("FOOTBALL CLUB");
             System.out.println("what would you like to do?");
             System.out.println("1) See all current players");
-            System.out.println("2) Add a new player");
+            System.out.println("2) Add a new player"); //complete
             System.out.println("3) Search for a player");
             System.out.println("4) Delete a current player");
             System.out.println("5) Close the program");
@@ -54,10 +54,10 @@ public class Menu {
                     selection =intCheck(1,2);
                         if (selection==1)
                         {
-                            team = "F.C. København";
+                            team = "F.C.København";
                         } else
                         {
-                            team = "Randers FC";
+                            team = "RandersFC";
                         }
                     Player createdInput = new Player(firstName, lastName,team, age);
                     list.add(createdInput);

@@ -3,8 +3,9 @@ public class Node {
     private Player data = new Player();
     private Node next;
 
-    public Node () {
-        this (null, null);
+    public Node ()
+    {
+        this(null,null);
     }
 
     public Node ( Player data ) {
