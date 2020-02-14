@@ -12,7 +12,7 @@ public class Menu {
     {
     }
 
-    public void display() //to keep the code clean we put display in its own class
+    public void display(LinkedListTest list) //to keep the code clean we put display in its own class
     {
         Scanner input = new Scanner(System.in); //scanner for user input
         boolean run=true; //boolean to be able to exit runtime without need of class specific console commands
@@ -60,7 +60,8 @@ public class Menu {
                             team = "Randers FC";
                         }
                     Player createdInput = new Player(firstName, lastName,team, age);
-                    // TEMP needs to be stored somewhere.
+                    list.add(createdInput);
+                        // TEMP needs to be stored somewhere.
                     System.out.println("New player: " + firstName + " " + lastName + " has been created.");
                     run = backQuit();
                     //endregion

@@ -1,6 +1,8 @@
+import java.io.FileNotFoundException;
+
 public class Main {
 
-    public static void main(String[] args)
+    public static void main(String[] args) throws FileNotFoundException
     {
         Menu mainMenu = new Menu();
 
@@ -14,7 +16,6 @@ public class Main {
 
         //list.add(new Player ("s", "dasdasdad", "da", 5), 3);
 
-        list.printList();
 
         System.out.println("**********************");
 
@@ -25,7 +26,9 @@ public class Main {
         //testing end
 
         //Populate the LinkedLists from a text file here?
-        //mainMenu.display();
+        mainMenu.display(list);
+        FileManagement.saveToFile(list);
+        list.printList();
         //Save the LinkedList contents to file here?
     }
 }
