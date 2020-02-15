@@ -1,5 +1,6 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 public class Main {
 
@@ -89,7 +90,8 @@ public class Main {
 
         // endregion
 
-
+        Scanner console = new Scanner(System.in);
+        console.nextLine();
     }
 
     // idk which comments are whose so I just copied all
@@ -163,6 +165,7 @@ public class Main {
 
     public static void main(String[] args)
     {
+        foobar(true);
         try
         {
             // GypsyTest();
@@ -173,5 +176,16 @@ public class Main {
             System.out.println("Someone fucked up: " + e);
         }
 
+    }
+
+    public static void foobar(boolean doit)
+    {
+        try
+        {
+            Musik musik = new Musik("musik");
+            if (doit) musik.play();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }
 }
