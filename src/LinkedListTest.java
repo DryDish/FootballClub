@@ -1,9 +1,13 @@
 import javax.management.NotificationEmitter;
+import java.util.ArrayList;
 
 public class LinkedListTest {
 
+    //region Attributes
     private Node head = new Node(); // First node of the list
+    //endregion
 
+    //region Constructors
     LinkedListTest () {
 
     }
@@ -11,7 +15,10 @@ public class LinkedListTest {
     LinkedListTest ( Node head ) {
         this.head = head;
     }
+    //endregion
 
+    //region Methods
+    //region Add Methods
     public void add ( Player data )
     {
         if ( head.getData() == null )
@@ -59,6 +66,7 @@ public class LinkedListTest {
             }
         }
     }
+    //endregion
 
     public void remove ( int index ) {
         if ( this.size() > index ) {
@@ -131,6 +139,44 @@ public class LinkedListTest {
 
     }
 
+    //region Search Methods
+    public ArrayList<Integer> searchName ( String name ) {
+        ArrayList<Integer> results = new ArrayList<>();
+        String toSearch = name.toLowerCase();
+        for ( int i = 0; i < this.size(); i++ ) {
+            String searchIn1 = this.get(i).getData().getFirstName().toLowerCase();
+            String searchIn2 = this.get(i).getData().getLastName().toLowerCase();
+            if (searchIn1.contains(toSearch) || searchIn2.contains(toSearch)) {
+                results.add(i);
+            }
+        }
+        return results;
+    }
+
+    public ArrayList<Integer> searchTeam ( String team ) {
+        ArrayList<Integer> results = new ArrayList<>();
+        String toSearch = team.toLowerCase();
+        for ( int i = 0; i < this.size(); i++ ) {
+            String searchIn1 = this.get(i).getData().getTeam().toLowerCase();
+            if (searchIn1.contains(toSearch)) {
+                results.add(i);
+            }
+        }
+        return results;
+    }
+
+    public ArrayList<Integer> searchAge ( int age ) {
+        ArrayList<Integer> results = new ArrayList<>();
+        for ( int i = 0; i < this.size(); i++ ) {
+            if (age == this.get(i).getData().getAge()) {
+                results.add(i);
+            }
+        }
+        return results;
+    }
+    //endregion
+
+    //region Sort Methods
     public void sortByAge () {
         boolean sorted = false;
         while ( !sorted ) {
@@ -147,6 +193,58 @@ public class LinkedListTest {
             }
         }
     }
+
+    public void sortByFirstName () {
+        boolean sorted = false;
+        while ( !sorted ) {
+            sorted = true;
+            Node current = head;
+            int index = 0;
+            while (current.getNext() != null) {
+                if (current.getData().getFirstName().compareTo(current.getNext().getData().getFirstName())>0){
+                    sorted = false;
+                    swap (index, index+1);
+                }
+                current = current.getNext();
+                index++;
+            }
+        }
+    }
+
+    public void sortByLastName () {
+        boolean sorted = false;
+        while ( !sorted ) {
+            sorted = true;
+            Node current = head;
+            int index = 0;
+            while (current.getNext() != null) {
+                if ((current.getData().getLastName().compareTo(current.getNext().getData().getLastName())>0)){
+                    sorted = false;
+                    swap (index, index+1);
+                }
+                current = current.getNext();
+                index++;
+            }
+        }
+    }
+
+    public void sortByTeam () {
+        boolean sorted = false;
+        while ( !sorted ) {
+            sorted = true;
+            Node current = head;
+            int index = 0;
+            while (current.getNext() != null) {
+                if ((current.getData().getTeam().compareTo(current.getNext().getData().getTeam()))>0){
+                    sorted = false;
+                    swap (index, index+1);
+                }
+                current = current.getNext();
+                index++;
+            }
+        }
+    }
+    //endregion
 
     public int size ()
     {
@@ -175,7 +273,9 @@ public class LinkedListTest {
             System.out.println(current.toString());
         }
     }
+    //endregion
 
+    //region Getters & Setters
     public Node getHead() {
         return head;
     }
@@ -183,4 +283,5 @@ public class LinkedListTest {
     public void setHead(Node head) {
         this.head = head;
     }
+    //endregion
 }

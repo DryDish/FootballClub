@@ -137,29 +137,30 @@ public class Main {
         LinkedListTest list = new LinkedListTest();
 
         //list.add(new Player ("s", "ds", "da", 3));
-        /*
-        list.add(new Player ("4", "ds", "da", 3));
-        list.add(new Player ("5", "ds", "da", 3));
-        list.add(new Player ("6", "ds", "da", 3));
-        list.add(new Player ("7", "ds", "da", 3));
 
-        list.add(new Player ("s", "dasdasdad", "da", 5), 3);
-        */
+        list.add(new Player ("Cristi", "ds", "da", 3));
+        list.add(new Player ("Alexander", "ds", "da", 3));
+        list.add(new Player ("Jan", "ds", "da", 3));
+        list.add(new Player ("Teo", "ds", "da", 3));
+        list.add(new Player ("Alex", "ds", "da", 3));
+
+        //list.add(new Player ("s", "dasdasdad", "da", 5), 3);
+
 
 
         System.out.println("**********************");
 
-        list.sortByAge();
+        list.sortByFirstName();
 
         list.printList();
 
         //testing end
 
         //Populate the LinkedLists from a text file here?
-        FileManagement.readFromFile(list);
+        /*FileManagement.readFromFile(list);
         mainMenu.display(list);
         FileManagement.saveToFile(list);
-        list.printList();
+        list.printList();*/
         //Save the LinkedList contents to file here?
     }
 
