@@ -1,16 +1,16 @@
 // Ziemniaki zacz€to pisac o 23:42 pod wpylew 5-ciu pilsnerow i marihuannnny
 // zakoczono o X
-public class DoubleLinkedList
+public class KutasyList
 {
 
     private Node head = new Node(); // First node of the list
 
-    public DoubleLinkedList()
+    public KutasyList()
     {
 
     }
 
-    public DoubleLinkedList(Node head)
+    public KutasyList(Node head)
     {
         this.head = head;
     }
@@ -30,15 +30,15 @@ public class DoubleLinkedList
         else
         {
             Node nextNode = new Node(data);
-            Node currentNode = this.head;    // Iterate over elements without moving the head
+            Node current = this.head;    // Iterate over elements without moving the head
 
-            while(currentNode.getNext() != null)
+            while(current.getNext() != null)
             {
-                currentNode = currentNode.getNext();
+                current = current.getNext();
             }
 
-            nextNode.setPrevious(currentNode);
-            currentNode.setNext(nextNode);
+            nextNode.setPrevious(current);
+            current.setNext(nextNode);
         }
     }
 
@@ -48,7 +48,7 @@ public class DoubleLinkedList
         {
 
             Node newNode = new Node(data);
-            Node currentNode = this.head;
+            Node current = this.head;
             if (index == 0)
             {
                 newNode.setNext(this.head);
@@ -58,12 +58,12 @@ public class DoubleLinkedList
                 int i = 0;
                 while (i < index - 1)
                 {
-                    currentNode = currentNode.getNext();
+                    current = current.getNext();
                     i++;
                 }
-                newNode.setNext(currentNode.getNext());
-                newNode.setPrevious(currentNode);
-                currentNode.setNext(newNode);
+                newNode.setNext(current.getNext());
+                newNode.setPrevious(current);
+                current.setNext(newNode);
             }
         }
     }
@@ -72,19 +72,19 @@ public class DoubleLinkedList
     {
         if (this.size() > index)
         {
-            Node currentNode = head;
+            Node current = head;
             if (index == 0)
             {
-                head = currentNode.getNext();
+                head = current.getNext();
             } else
             {
                 int i = 0;
                 while (i < index - 1)
                 {
-                    currentNode = currentNode.getNext();
+                    current = current.getNext();
                     i++;
                 }
-                currentNode.setNext(currentNode.getNext().getNext());
+                current.setNext(current.getNext().getNext());
             }
         }
     }
@@ -93,14 +93,14 @@ public class DoubleLinkedList
     {
         if (this.size() > index)
         {
-            Node currentNode = head;
+            Node current = head;
             int i = 0;
             while (i < index)
             {
-                currentNode = currentNode.getNext();
+                current = current.getNext();
                 i++;
             }
-            return currentNode;
+            return current;
         }
         return null;
     }
@@ -131,16 +131,16 @@ public class DoubleLinkedList
         while (!sorted)
         {
             sorted = true;
-            Node currentNode = head;
+            Node current = head;
             int index = 0;
-            while (currentNode.getNext() != null)
+            while (current.getNext() != null)
             {
-                if (currentNode.getData().getAge() > currentNode.getNext().getData().getAge())
+                if (current.getData().getAge() > current.getNext().getData().getAge())
                 {
                     sorted = false;
                     swap(index, index + 1);
                 }
-                currentNode = currentNode.getNext();
+                current = current.getNext();
                 index++;
             }
         }
@@ -154,11 +154,11 @@ public class DoubleLinkedList
         } else
         {
             int length = 1;
-            Node currentNode = head;
-            while (currentNode.getNext() != null)
+            Node current = head;
+            while (current.getNext() != null)
             {
                 length++;
-                currentNode = currentNode.getNext();
+                current = current.getNext();
             }
             return length;
         }
@@ -166,12 +166,12 @@ public class DoubleLinkedList
 
     public void printList()
     {
-        Node currentNode = head;
-        System.out.println(currentNode.toString());
-        while (currentNode.getNext() != null)
+        Node current = head;
+        System.out.println(current.toString());
+        while (current.getNext() != null)
         {
-            currentNode = currentNode.getNext();
-            System.out.println(currentNode.toString());
+            current = current.getNext();
+            System.out.println(current.toString());
         }
     }
 
