@@ -1,16 +1,16 @@
 // Ziemniaki zacz€to pisac o 23:42 pod wpylew 5-ciu pilsnerow i marihuannnny
 // zakoczono o X
-public class KutasyList
+public class DoubleLinkedList
 {
 
     private Node head = new Node(); // First node of the list
 
-    public KutasyList()
+    public DoubleLinkedList()
     {
 
     }
 
-    public KutasyList(Node head)
+    public DoubleLinkedList(Node head)
     {
         this.head = head;
     }
@@ -30,15 +30,15 @@ public class KutasyList
         else
         {
             Node nextNode = new Node(data);
-            Node current = this.head;    // Iterate over elements without moving the head
+            Node currentNode = this.head;    // Iterate over elements without moving the head
 
-            while(current.getNext() != null)
+            while(currentNode.getNext() != null)
             {
-                current = current.getNext();
+                currentNode = currentNode.getNext();
             }
 
-            nextNode.setPrevious(current);
-            current.setNext(nextNode);
+            nextNode.setPrevious(currentNode);
+            currentNode.setNext(nextNode);
         }
     }
 
@@ -48,7 +48,7 @@ public class KutasyList
         {
 
             Node newNode = new Node(data);
-            Node current = this.head;
+            Node currentNode = this.head;
             if (index == 0)
             {
                 newNode.setNext(this.head);
@@ -58,12 +58,12 @@ public class KutasyList
                 int i = 0;
                 while (i < index - 1)
                 {
-                    current = current.getNext();
+                    currentNode = currentNode.getNext();
                     i++;
                 }
-                newNode.setNext(current.getNext());
-                newNode.setPrevious(current);
-                current.setNext(newNode);
+                newNode.setNext(currentNode.getNext());
+                newNode.setPrevious(currentNode);
+                currentNode.setNext(newNode);
             }
         }
     }
@@ -72,19 +72,19 @@ public class KutasyList
     {
         if (this.size() > index)
         {
-            Node current = head;
+            Node currentNode = head;
             if (index == 0)
             {
-                head = current.getNext();
+                head = currentNode.getNext();
             } else
             {
                 int i = 0;
                 while (i < index - 1)
                 {
-                    current = current.getNext();
+                    currentNode = currentNode.getNext();
                     i++;
                 }
-                current.setNext(current.getNext().getNext());
+                currentNode.setNext(currentNode.getNext().getNext());
             }
         }
     }
@@ -93,14 +93,14 @@ public class KutasyList
     {
         if (this.size() > index)
         {
-            Node current = head;
+            Node currentNode = head;
             int i = 0;
             while (i < index)
             {
-                current = current.getNext();
+                currentNode = currentNode.getNext();
                 i++;
             }
-            return current;
+            return currentNode;
         }
         return null;
     }
@@ -131,16 +131,16 @@ public class KutasyList
         while (!sorted)
         {
             sorted = true;
-            Node current = head;
+            Node currentNode = head;
             int index = 0;
-            while (current.getNext() != null)
+            while (currentNode.getNext() != null)
             {
-                if (current.getData().getAge() > current.getNext().getData().getAge())
+                if (currentNode.getData().getAge() > currentNode.getNext().getData().getAge())
                 {
                     sorted = false;
                     swap(index, index + 1);
                 }
-                current = current.getNext();
+                currentNode = currentNode.getNext();
                 index++;
             }
         }
@@ -154,11 +154,11 @@ public class KutasyList
         } else
         {
             int length = 1;
-            Node current = head;
-            while (current.getNext() != null)
+            Node currentNode = head;
+            while (currentNode.getNext() != null)
             {
                 length++;
-                current = current.getNext();
+                currentNode = currentNode.getNext();
             }
             return length;
         }
@@ -166,12 +166,12 @@ public class KutasyList
 
     public void printList()
     {
-        Node current = head;
-        System.out.println(current.toString());
-        while (current.getNext() != null)
+        Node currentNode = head;
+        System.out.println(currentNode.toString());
+        while (currentNode.getNext() != null)
         {
-            current = current.getNext();
-            System.out.println(current.toString());
+            currentNode = currentNode.getNext();
+            System.out.println(currentNode.toString());
         }
     }
 

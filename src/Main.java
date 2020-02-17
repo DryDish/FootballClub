@@ -31,7 +31,7 @@ public class Main {
 
         // region List init and assigment testing
 
-        KutasyList list = new KutasyList();
+        DoubleLinkedList list = new DoubleLinkedList();
         System.out.println(ANSI_YELLOW + "> Empty list after init:" + ANSI_RESET);
         System.out.print(ANSI_GREEN);
         //list.printList();
@@ -68,7 +68,7 @@ public class Main {
 
         // region File Management Testing
         // Clear the List
-        list = new KutasyList();
+        list = new DoubleLinkedList();
 
         try
         {
@@ -91,6 +91,7 @@ public class Main {
         // endregion
 
         Scanner console = new Scanner(System.in);
+        System.out.print(ANSI_YELLOW + "Press enter to finish" + ANSI_RESET);
         console.nextLine();
     }
 

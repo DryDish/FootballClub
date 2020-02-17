@@ -23,7 +23,7 @@ public class FileManagement {
 
         }
     }
-    public static void saveToFile(KutasyList playerList) throws FileNotFoundException
+    public static void saveToFile(DoubleLinkedList playerList) throws FileNotFoundException
     {
         boolean hasPrinted = false;
         PrintStream output = new PrintStream(new File ("TextStorage2.txt"));
@@ -69,7 +69,7 @@ public class FileManagement {
         }
     }
 
-    public static void readFromFile(KutasyList playerList) throws FileNotFoundException
+    public static void readFromFile(DoubleLinkedList playerList) throws FileNotFoundException
     {
         String firstName;
         String lastName;
