@@ -8,11 +8,10 @@ public class Main {
     {
         foobar(false);
 
-        try
+        try //checks for errors
         {
-            presentTheMenu();
-            // GypsyTest();
-            // PizzaTest();
+            //presentTheMenu();
+            GypsyTest();
             //PolishTest();
             // PerformanceTest();
         } catch (Exception e) {
@@ -129,8 +128,9 @@ public class Main {
     {
         Menu mainMenu = new Menu();
 
-        //testing
+
         LinkedListTest list = new LinkedListTest();
+        //testing
 
         //list.add(new Player ("s", "ds", "da", 3));
         /*
@@ -140,7 +140,7 @@ public class Main {
         list.add(new Player ("7", "ds", "da", 3));
 
         list.add(new Player ("s", "dasdasdad", "da", 5), 3);
-        */
+
 
 
         System.out.println("**********************");
@@ -148,7 +148,7 @@ public class Main {
         list.sortByAge();
 
         list.printList();
-
+        */
         //testing end
 
         //Populate the LinkedLists from a text file here?
@@ -159,41 +159,7 @@ public class Main {
         //Save the LinkedList contents to file here?
     }
 
-    public static void PizzaTest() throws FileNotFoundException
-    {
-        Menu mainMenu = new Menu();
 
-        //testing
-        LinkedListTest list = new LinkedListTest();
-
-        //list.add(new Player ("s", "ds", "da", 3));
-
-        list.add(new Player ("Cristi", "ds", "da", 3));
-        list.add(new Player ("Alexander", "ds", "da", 3));
-        list.add(new Player ("Jan", "ds", "da", 3));
-        list.add(new Player ("Teo", "ds", "da", 3));
-        list.add(new Player ("Alex", "ds", "da", 3));
-
-        //list.add(new Player ("s", "dasdasdad", "da", 5), 3);
-
-
-
-        System.out.println("**********************");
-
-        list.sortByFirstName();
-
-        list.printList();
-
-        //testing end
-
-        //Populate the LinkedLists from a text file here?
-        /*FileManagement.readFromFile(list);
-        mainMenu.display(list);
-        FileManagement.saveToFile(list);
-        list.printList();*/
-        //Save the LinkedList contents to file here?
-    }
-    //endregion
     public static void foobar(boolean doit)
     {
         try

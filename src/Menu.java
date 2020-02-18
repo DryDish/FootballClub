@@ -40,7 +40,7 @@ public class Menu {
                     {
                         for (int i = 0; i < list.size(); i++)
                         {
-                            System.out.print(list.get(i));
+                            System.out.println(list.get(i));
                         }
                     } catch (NullPointerException e) {
                         System.out.println("There is currently no players, add some first");
@@ -71,7 +71,6 @@ public class Menu {
                         }
                     Player createdInput = new Player(firstName, lastName,team, age);
                     list.add(createdInput);
-                        // TEMP needs to be stored somewhere.
                     System.out.println("New player: " + firstName + " " + lastName + " has been created.");
                     run = backQuit();
                     //endregion
@@ -86,11 +85,10 @@ public class Menu {
                     break;
                 case 5: //exit the runtime
                     run = false;
-                    break;
-                case 6:
+                /*case 6:
                     PerformanceTest test = new PerformanceTest();
                     test.runtest();
-                    break;
+                    break;*/
             }
         }
 

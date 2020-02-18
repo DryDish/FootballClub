@@ -4,3 +4,4 @@ Name: 3 ds Team: RandersFC Age: 3
 Name: 4 ds Team: F.C.København Age: 3
 Name: 5 ds Team: F.C.København Age: 3
 Name: Peter Griffin Team: RandersFC Age: 12
+Name: Jan Traitor Team: RandersFC Age: 69
