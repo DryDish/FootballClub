@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Menu {
 
@@ -118,8 +119,43 @@ public class Menu {
                     break;
                 case 3: //Searches for a player in the linked list
                     headerDisplay("SEARCH FOR A PLAYER");
-                    System.out.println("Please yupe the name of the player you would like to search for.");
-                    System.out.println("Someone didn't implement this...");
+                    System.out.println("Choose a search criteria :");
+                    System.out.println("1) Name");
+                    System.out.println("2) Team");
+                    System.out.println("3) Age");
+                    int result = intCheck(1, 3);
+                    Scanner in = new Scanner (System.in);
+                    ArrayList<Integer> players = new ArrayList<>();
+
+                    switch (result) {
+                        case 1:
+                            System.out.println("Next, please type the Name :");
+                            String nameInput = in.next() + in.nextLine();
+                            players = list.searchName(nameInput);
+                            for (int i = 0; i < players.size(); i ++ ) {
+                                System.out.println(list.get(i).getData().toString());
+                                System.out.println();
+                            }
+                            break;
+                        case 2:
+                            System.out.println("Next, please type the Team :");
+                            String teamInput = in.next() + in.nextLine();
+                            players = list.searchTeam(teamInput);
+                            for (int i = 0; i < players.size(); i ++ ) {
+                                System.out.println(list.get(i).getData().toString());
+                                System.out.println();
+                            }
+                            break;
+                        case 3:
+                            System.out.println("Next, please type the Age :");
+                            int ageInput = intCheck(0, 99);
+                            players = list.searchAge(ageInput);
+                            for (int i = 0; i < players.size(); i ++ ) {
+                                System.out.println(list.get(i).getData().toString());
+                                System.out.println();
+                            }
+                    }
+                    backQuit();
                     break;
                 case 4: //Delete a player from the linked list
                     headerDisplay("PERISH A PLAYER");
