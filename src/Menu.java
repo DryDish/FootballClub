@@ -139,7 +139,7 @@ public class Menu {
                             String nameInput = in.next() + in.nextLine();
                             players = list.searchName(nameInput);
                             for (int i = 0; i < players.size(); i ++ ) {
-                                System.out.println(list.get(i).getData().toString());
+                                System.out.println(list.get(players.get(i)).getData().toString());
                                 System.out.println();
                             }
                             break;
@@ -148,7 +148,7 @@ public class Menu {
                             String teamInput = in.next() + in.nextLine();
                             players = list.searchTeam(teamInput);
                             for (int i = 0; i < players.size(); i ++ ) {
-                                System.out.println(list.get(i).getData().toString());
+                                System.out.println(list.get(players.get(i)).getData().toString());
                                 System.out.println();
                             }
                             break;
@@ -157,7 +157,7 @@ public class Menu {
                             int ageInput = intCheck(0, 99);
                             players = list.searchAge(ageInput);
                             for (int i = 0; i < players.size(); i ++ ) {
-                                System.out.println(list.get(i).getData().toString());
+                                System.out.println(list.get(players.get(i)).getData().toString());
                                 System.out.println();
                             }
                     }
