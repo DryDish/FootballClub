@@ -30,11 +30,23 @@ public class Menu {
             System.out.println("3) Search for a player");
             System.out.println("4) Delete a current player");
             System.out.println("5) Close the program");
-            selection = intCheck(1,5);
+            System.out.println("6) Bonus - performance comparison");
+            selection = intCheck(1,6);
             switch (selection)
             {
                 case 1: //show a list of all current players from linked list
                     headerDisplay("CURRENT PLAYERS");
+                    try
+                    {
+                        for (int i = 0; i < list.size(); i++)
+                        {
+                            System.out.print(list.get(i));
+                        }
+                    } catch (NullPointerException e) {
+                        System.out.println("There is currently no players, add some first");
+                    }
+                    System.out.print("Press Enter to continue");
+                    input.nextLine();
                     break;
                 case 2: //Adds a new player to linked list
                     //region Add new player
@@ -66,13 +78,19 @@ public class Menu {
                     break;
                 case 3: //Searches for a player in the linked list
                     headerDisplay("SEARCH FOR A PLAYER");
+                    System.out.println("Someone didn't implement this...");
                     break;
                 case 4: //Delete a player from the linked list
                     headerDisplay("DELETE A PLAYER");
+                    System.out.println("Someone didn't implement this...");
                     break;
                 case 5: //exit the runtime
                     run = false;
-
+                    break;
+                case 6:
+                    PerformanceTest test = new PerformanceTest();
+                    test.runtest();
+                    break;
             }
         }
 

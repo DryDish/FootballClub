@@ -10,11 +10,11 @@ public class Main {
 
         try
         {
-            // presentTheMenu();
+            presentTheMenu();
             // GypsyTest();
             // PizzaTest();
             //PolishTest();
-            PerformanceTest();
+            // PerformanceTest();
         } catch (Exception e) {
             System.out.println("Someone fucked up: " + e);
         }

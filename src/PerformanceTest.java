@@ -24,8 +24,8 @@ public class PerformanceTest
     {
         // Primary variables for this experiment: The Lists
         ArrayList<Player> arrList = new ArrayList<Player>();
-        //LinkedListTest linkedList = new LinkedListTest();
-        LinkedList<Player> linkedList = new LinkedList<Player>();
+        LinkedListTest linkedList = new LinkedListTest();
+        // LinkedList<Player> linkedList = new LinkedList<Player>();
 
         this.dummy = new Player("Peter", "Griffin", "Team Red", 100);
         Scanner console = new Scanner(System.in);
@@ -45,6 +45,8 @@ public class PerformanceTest
             } catch (Exception e) {
                 System.out.println(ANSI_RED + "Wrong input, try again: " + ANSI_RESET);
             }
+
+            if(playerAmount == 0) break;
 
             System.out.println(ANSI_BLUE + "List population test:" + ANSI_RESET);
             // region test Array
@@ -122,25 +124,29 @@ public class PerformanceTest
             }
             System.out.println(ANSI_GREEN + "End:   " + getCurrentTime() + ANSI_RESET);
             // endregion
-            // region test LinkedList
-            System.out.println(ANSI_BLUE + "Linked List WITH an iterator" + ANSI_RESET);
-            System.out.println(ANSI_GREEN + "Start: " + getCurrentTime() + ANSI_RESET);
-            try
+            // region test LinkedList WITH an iterator
+            if (!(linkedList instanceof LinkedListTest))
             {
-                Iterator<Player> iter = linkedList.iterator();
-                Player temp;
-                for (int i = 0; i < linkedList.size(); i++)
+                System.out.println(ANSI_BLUE + "Linked List WITH an iterator" + ANSI_RESET);
+                System.out.println(ANSI_GREEN + "Start: " + getCurrentTime() + ANSI_RESET);
+                try
                 {
-                    temp = iter.next();
+                    //Iterator<Player> iter = linkedList.iterator();
+                    Player temp;
+                    for (int i = 0; i < linkedList.size(); i++)
+                    {
+                        //temp = iter.next();
+                    }
+                } catch (java.lang.OutOfMemoryError e) {
+                    System.out.println(ANSI_RED + "Run out of memory on the head: ");
+                    StringWriter sw = new StringWriter();
+                    PrintWriter pw = new PrintWriter(sw);
+                    e.printStackTrace(pw);
+                    System.out.println(sw.toString());
                 }
-            } catch (java.lang.OutOfMemoryError e) {
-                System.out.println(ANSI_RED + "Run out of memory on the head: ");
-                StringWriter sw = new StringWriter();
-                PrintWriter pw = new PrintWriter(sw);
-                e.printStackTrace(pw);
-                System.out.println(sw.toString());
+                System.out.println(ANSI_GREEN + "End:   " + getCurrentTime() + ANSI_RESET);
+
             }
-            System.out.println(ANSI_GREEN + "End:   " + getCurrentTime() + ANSI_RESET);
             // endregion
         }
     }
