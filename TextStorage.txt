@@ -1,6 +1,6 @@
 Name: Anders Fander Team: RandersFC Age: 15
 Name: Banana Game Team: F.C.København Age: 25
-Name: Carlos Hallp ds Team: RandersFC Age: 14
+Name: Carlos Hallp Team: RandersFC Age: 14
 Name: Dennis Iesterday Team: F.C.København Age: 20
 Name: Easter Japs Team: F.C.København Age: 23
 Name: Farit Keanu Team: RandersFC Age: 17
