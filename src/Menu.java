@@ -35,6 +35,45 @@ public class Menu {
             switch (selection)
             {
                 case 1: //show a list of all current players from linked list
+                    headerDisplay("SHOW A LIST OF ALL PLAYERS");
+                    System.out.println("What would you like to sort the list of players by?");
+                    System.out.println("1) First name");
+                    System.out.println("2) Last name");
+                    System.out.println("3) Age");
+                    System.out.println("4) Team");
+                    System.out.println("5) Return to main menu");
+                    selection = intCheck(1,5);
+                    switch (selection)
+                    {
+                        case 1:
+                            headerDisplay("ALL PLAYERS SORTED BY FIRST NAME");
+                            list.sortByFirstName();
+                            list.printList();
+                            backQuit();
+                            break;
+                        case 2:
+                            headerDisplay("ALL PLAYERS SORTED BY LAST NAME");
+                            list.sortByLastName();
+                            list.printList();
+                            backQuit();
+                            break;
+                        case 3:
+                            headerDisplay("ALL PLAYERS SORTED BY AGE");
+                            list.sortByAge();
+                            list.printList();
+                            backQuit();
+                            break;
+                        case 4:
+                            headerDisplay("ALL PLAYERS SORTED BY TEAM");
+                            list.sortByTeam();
+                            list.printList();
+                            backQuit();
+                            break;
+                        case 5:
+                            break;
+                    }
+
+                    /*
                     headerDisplay("CURRENT PLAYERS");
                     try
                     {
@@ -48,6 +87,8 @@ public class Menu {
                     System.out.print("Press Enter to continue");
                     input.nextLine();
                     break;
+                    */
+
                 case 2: //Adds a new player to linked list
                     //region Add new player
                     headerDisplay("CREATE A NEW PLAYER");
@@ -77,6 +118,7 @@ public class Menu {
                     break;
                 case 3: //Searches for a player in the linked list
                     headerDisplay("SEARCH FOR A PLAYER");
+                    System.out.println("Please yupe the name of the player you would like to search for.");
                     System.out.println("Someone didn't implement this...");
                     break;
                 case 4: //Delete a player from the linked list
