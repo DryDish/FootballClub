@@ -4,6 +4,29 @@ import java.util.Scanner;
 
 public class Main {
 
+    public static void main (String[] args)
+    {
+        foobar(false);
+
+        try
+        {
+            // presentTheMenu();
+            // GypsyTest();
+            // PizzaTest();
+            //PolishTest();
+            PerformanceTest();
+        } catch (Exception e) {
+            System.out.println("Someone fucked up: " + e);
+        }
+    }
+
+    public static void presentTheMenu()
+    {
+        LinkedListTest list = new LinkedListTest();
+        Menu mainMenu = new Menu();
+        mainMenu.display(list);
+    }
+
     public static void PolishTest()
     {
         // region ANSI CODES
@@ -170,22 +193,6 @@ public class Main {
         list.printList();*/
         //Save the LinkedList contents to file here?
     }
-
-    public static void main (String[] args)
-    {
-        foobar(false);
-
-        try
-        {
-            // GypsyTest();
-            // PizzaTest();
-            //PolishTest();
-            PerformanceTest();
-        } catch (Exception e) {
-            System.out.println("Someone fucked up: " + e);
-        }
-    }
-
 
     public static void foobar(boolean doit)
     {
