@@ -95,6 +95,12 @@ public class Main {
         console.nextLine();
     }
 
+    public static void PerformanceTest()
+    {
+        PerformanceTest test = new PerformanceTest();
+        test.runtest();
+    }
+
     // idk which comments are whose so I just copied all
     public static void GypsyTest() throws FileNotFoundException
     {
@@ -165,27 +171,28 @@ public class Main {
         //Save the LinkedList contents to file here?
     }
 
-    public static void main(String[] args)
+    public static void main (String[] args)
     {
-        foobar(true);
+        foobar(false);
+
         try
         {
             // GypsyTest();
             // PizzaTest();
-            PolishTest();
-
+            //PolishTest();
+            PerformanceTest();
         } catch (Exception e) {
             System.out.println("Someone fucked up: " + e);
         }
-
     }
+
 
     public static void foobar(boolean doit)
     {
         try
         {
             Musik musik = new Musik("musik");
-            if (doit) musik.play();
+            if(doit) musik.play();
         } catch (Exception e) {
             System.out.println(e);
         }
