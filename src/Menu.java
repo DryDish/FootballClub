@@ -28,7 +28,7 @@ public class Menu {
             System.out.println("1) See all current players");
             System.out.println("2) Add a new player"); //complete
             System.out.println("3) Search for a player");
-            System.out.println("4) Delete a current player");
+            System.out.println("4) Kick out a current player");
             System.out.println("5) Close the program");
             System.out.println("6) Bonus - performance comparison");
             selection = intCheck(1,6);
@@ -80,23 +80,26 @@ public class Menu {
                     System.out.println("Someone didn't implement this...");
                     break;
                 case 4: //Delete a player from the linked list
-                    headerDisplay("DELETE A PLAYER");
-                    System.out.println("Someone didn't implement this...");
+                    headerDisplay("PERISH A PLAYER");
+                    list.printList();
+                    System.out.println("What is the index of a player you would like to remove from the Team?");
+                    selection = intCheck(1, list.size())-1;
+                    System.out.println("Player " + list.get(selection) + " has been kicked out");
+                    list.remove(selection);
+                    run = backQuit();
                     break;
                 case 5: //exit the runtime
                     run = false;
-                /*case 6:
+                    break;
+                case 6:
                     PerformanceTest test = new PerformanceTest();
                     test.runtest();
-                    break;*/
+                    break;
             }
         }
 
 
     }
-
-
-
 
     private boolean backQuit() //gives a choice of main menu or quiting program
     {
