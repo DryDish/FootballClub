@@ -6,6 +6,7 @@ public class Menu {
     private int decorationSpace;
     private int lineSpacer = 80;
     private int screenNumber;
+    int selection; //to register input
 
     public Menu()
     {
@@ -15,7 +16,7 @@ public class Menu {
     {
         Scanner input = new Scanner(System.in); //scanner for user input
         boolean run=true; //boolean to be able to exit runtime without need of class specific console commands
-        int selection; //to register input
+
 
         String firstName;
         String lastName;
@@ -43,36 +44,41 @@ public class Menu {
                     System.out.println("3) Age");
                     System.out.println("4) Team");
                     System.out.println("5) Return to main menu");
-                    selection = intCheck(1,5);
-                    switch (selection)
+                    int selection2 = intCheck(1,5);
+                    switch (selection2)
                     {
                         case 1:
                             headerDisplay("ALL PLAYERS SORTED BY FIRST NAME");
                             list.sortByFirstName();
                             list.printList();
+                            selection = 1;
                             backQuit();
                             break;
                         case 2:
                             headerDisplay("ALL PLAYERS SORTED BY LAST NAME");
                             list.sortByLastName();
                             list.printList();
+                            selection = 1;
                             backQuit();
                             break;
                         case 3:
                             headerDisplay("ALL PLAYERS SORTED BY AGE");
                             list.sortByAge();
                             list.printList();
+                            selection = 1;
                             backQuit();
                             break;
                         case 4:
                             headerDisplay("ALL PLAYERS SORTED BY TEAM");
                             list.sortByTeam();
                             list.printList();
-                            backQuit();
+                            selection = 1;
                             break;
                         case 5:
+                            selection = 1;
                             break;
                     }
+                    break;
 
                     /*
                     headerDisplay("CURRENT PLAYERS");
