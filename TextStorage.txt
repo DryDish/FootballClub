@@ -4,4 +4,13 @@ Name: Carlos Hallp Team: RandersFC Age: 14
 Name: Dennis Iesterday Team: F.C.København Age: 20
 Name: Easter Japs Team: F.C.København Age: 23
 Name: Farit Keanu Team: RandersFC Age: 17
-Name: Jan Traitor Team: RandersFC Age: 27
+Name: Itai Gramse Team: RandersFC Age: 27
+Name: Teodor Jonasson Team: RandersFC Age: 27
+Name: Cristi Purcea Team: RandersFC Age: 27
+Name: Cristian Valentin Team: RandersFC Age: 27
+Name: Cris Valentin Team: RandersFC Age: 17
+Name: Alexander Mac Team: RandersFC Age: 23
+Name: Alex Gangam Team: F.C.København Age: 25
+Name: Bob Sanders Team: F.C.København Age: 15
+Name: Robert Bob Team: RandersFC Age: 27
+Name: Simple Human Team: F.C.København Age: 13
