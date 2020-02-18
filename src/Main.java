@@ -26,7 +26,7 @@ public class Main {
         Menu mainMenu = new Menu();
         mainMenu.display(list);
     }
-
+    //region Tests
     public static void PolishTest()
     {
         // region ANSI CODES
@@ -193,7 +193,7 @@ public class Main {
         list.printList();*/
         //Save the LinkedList contents to file here?
     }
-
+    //endregion
     public static void foobar(boolean doit)
     {
         try
