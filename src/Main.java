@@ -155,7 +155,7 @@ public class Main {
         FileManagement.readFromFile(list);
         mainMenu.display(list);
         FileManagement.saveToFile(list);
-        list.printList();
+        //list.printList();
         //Save the LinkedList contents to file here?
     }
 
